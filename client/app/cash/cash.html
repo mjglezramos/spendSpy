@@ -1,0 +1,37 @@
+<md-content layout="row">		
+	<div>
+		<md-datepicker ng-model="fromDateFilter" md-placeholder="From Date"></md-datepicker>
+		<md-datepicker ng-model="toDateFilter" md-placeholder="To Date"></md-datepicker>
+	</div>
+	<span flex=""></span>
+	<md-button aria-label="Add Cash" class="md-fab md-mini" ng-click="addCash()">
+		<md-icon md-svg-icon="content:add" style="width:100%;height:100%;"></md-icon>
+	</md-button>
+</md-content>
+<md-data-table-container>
+	<table md-data-table>
+		<thead>
+			<tr>
+				<th name="Date"></th>
+				<th name="Description"></th>
+				<th name="Type"></th>
+				<th name="Cash"></th>
+				<th name="Action"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="cash in cashes">
+				<td>{{cash.date | date : fulldate}}</td>
+				<td>{{cash.description | uppercase}}</td>
+				<td>{{cash.type | uppercase}}</td>
+				<td>{{cash.price | currency}}</td>
+				<td>
+					<md-button class="md-icon-button md-button" ng-click="delete(cash)"><md-icon md-svg-icon="action:delete"></md-icon></md-button>
+					<md-button class="md-icon-button md-button" ng-click="edit(cash)"><md-icon md-svg-icon="image:edit"></md-icon></md-button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</md-data-table-container>
+<md-data-table-pagination md-total="{{cashes.length}}">
+</md-data-table-pagination>

@@ -1,0 +1,7 @@
+<div ng-include="'components/shell/shell.html'"></div>
+<md-subheader class="md-primary"><h2>Expenditures</h2></md-subheader>	
+<md-card class="col-md-12" ng-init="init()">	
+	<md-content-card>
+		<cash type-of-cash="Expenditures" list-cashes="expenditures" list-types="expenditureTypes" cash="expenditure" is-incoming="false"></cash>
+	</md-content-card>
+</md-card>
