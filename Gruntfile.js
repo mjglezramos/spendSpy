@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     localConfig = require('./server/config/local.env');
   } catch(e) {
     localConfig = {};
+    
   }
 
   // Load grunt tasks automatically, when needed
