@@ -90,6 +90,7 @@
     "start": "node server/app.js",
     "start_other":"",
     "start_try":"",
+    "start_other_try":"",
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
